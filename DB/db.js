@@ -1,10 +1,10 @@
 import mysql from "mysql2/promise";
 
 const pool = mysql.createPool({
-  host: "127.0.0.1",
-  port: "3306",
+  host: "svc.sel4.cloudtype.app",
+  port: "31258",
   user: "root",
-  password: "0000",
+  password: "m8u7dmtw4dc6206d",
   database: "appdb",
   waitForConnections: true,
   connectionLimit: 10,
