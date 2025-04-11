@@ -24,6 +24,7 @@ router.post("/status", async (req, res) => {
     }
     if (status === 1) {
       await axios.post(`http://localhost:8080/api/sms/${id}`);
+      await pool.query("UPDATE users SET status=? WHERE id=?", [0, id]);
     }
     res.status(200).json({ message: "상태 변경 성공" });
   } catch (error) {

@@ -41,10 +41,7 @@ router.post("/:id", async (req, res) => {
         text: `${user.name}님이 위급상황입니다. 생년월일:${user.birth}, 약물 알러지:${user.nkda}, 기저질환:${user.disease}, 위치:${user.address} `,
       });
     }
-    await axios.post(`http://localhost:8080/api/userstatus/status}`, {
-      id,
-      status: 0,
-    });
+
     res.status(200).json({ message: "문자 전송 성공" });
   } catch (err) {
     res.status(500).json({ message: "문자 전송 실패" });
