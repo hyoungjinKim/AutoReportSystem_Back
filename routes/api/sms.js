@@ -37,7 +37,7 @@ router.post("/:id", async (req, res) => {
     } else {
       await messageService.send({
         to: user.emergencyNumber.replace(/[^0-9]/g, ""),
-        from: user.phoneNumber.replace(/[^0-9]/g, ""),
+        from: "01030061194",
         text: `${user.name}님이 위급상황입니다. 생년월일:${user.birth}, 약물 알러지:${user.nkda}, 기저질환:${user.disease}, 위치:${user.address} `,
       });
     }
